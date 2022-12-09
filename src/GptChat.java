@@ -3,6 +3,7 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 
 import java.util.HashMap;
+import java.util.UUID;
 
 public class GptChat {
     String BASE_URL="https://chat.openai.com";
@@ -54,8 +55,9 @@ public class GptChat {
 
     public String chat(User_Gpt_Chat u,Gpt_Conversion cc,String text){
         try {
+            cc.id= UUID.randomUUID().toString();
             String id = cc.id;
-            String conversion_id = cc.parent_id;
+            String conversion_id = cc.conversion_id;
             String parent_id = cc.parent_id;
 
             String data="";
@@ -76,6 +78,7 @@ public class GptChat {
             if (res.isEmpty() || http.getCode()!=200) {
                 System.out.println("[error]chat:the res from http is empty or response is error");
                 System.out.println(res);
+                System.out.println(http.getCode());
                 return "";
             }
             String sarray[]=res.split("data:");

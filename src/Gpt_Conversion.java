@@ -5,7 +5,6 @@ public class Gpt_Conversion {
     String conversion_id="";
     String parent_id="";
     Gpt_Conversion(){
-        id= UUID.randomUUID().toString();
         parent_id=UUID.randomUUID().toString();
     }
 

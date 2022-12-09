@@ -18,6 +18,11 @@ public class Main{
         String res=g.chat(u,cc,"用c语言写一个计数器");
         System.out.println(res);
 
+        String res1=g.chat(u,cc,"继续");
+
+
+        System.out.println(res1);
+
 
         /*
 下面是一个简单的程序，它使用C语言来实现一个计数器。它将从1开始递增，每次递增1，直到达到用户指定的最大值。
