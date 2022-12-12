@@ -71,7 +71,7 @@ public class GptChat {
             HashMap<String, String> h = new HashMap<>();
 
             h.put("authorization", u.token);
-            h.put("cooki", u.cookies);
+            h.put("cookie", u.cookies);
             h.putAll(BASE_HEADER);
             http.setHeader(h);
             String res = http.post(data);
